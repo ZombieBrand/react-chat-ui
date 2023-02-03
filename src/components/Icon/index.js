@@ -3,16 +3,29 @@ import PropTypes from "prop-types";
 import { StyledIcon } from "./style";
 
 function Icon(props) {
-  const { children, ...rest } = props;
+  const {
+    icon: IconComponent,
+    width = 24,
+    height = 24,
+    color,
+    opacity,
+    ...rest
+  } = props;
   return (
-    <StyledIcon {...rest}>
-     {children}
+    <StyledIcon color={color} opacity={opacity} {...rest}>
+      {IconComponent && (
+        <IconComponent width={width} height={height}></IconComponent>
+      )}
     </StyledIcon>
   );
 }
 
 Icon.propTypes = {
-    children: PropTypes.any
+  icon: PropTypes.elementType,
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  color: PropTypes.string,
+  opacity: PropTypes.number,
 };
 
 export default Icon;
