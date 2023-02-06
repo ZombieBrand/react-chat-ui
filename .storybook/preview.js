@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { withTheme } from "./withTheme.decorator";
-
+import Style from 'index.css'
 export const globalTypes = {
   theme: {
     name: "Theme",
@@ -32,8 +32,14 @@ export const parameters = {
 };
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  ${Style.html};
+
+  .row-elements{
+    display:flex;
+  }
+  
+  .row-elements > * {
+    margin:8px;
   }
 `;
 

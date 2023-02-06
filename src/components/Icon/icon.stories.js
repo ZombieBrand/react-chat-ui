@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentDots } from "@fortawesome/free-regular-svg-icons";
 
 export default {
-  title: "Design System/Icon",
+  title: "UI 组件/Icon",
   component: Icon,
 };
 
