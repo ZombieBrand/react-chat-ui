@@ -18,7 +18,7 @@ export const StatusIcon = styled.div`
   top: 4px;
 
   &::before {
-    ${circleMixinFunc("white")};
+    ${({ size }) => circleMixinFunc("white", size)}
     transform: scale(2);
   }
   &::after {
