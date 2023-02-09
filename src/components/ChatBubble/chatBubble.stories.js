@@ -1,3 +1,4 @@
+import Emoji from "components/Emoji";
 import VoiceMessage from "components/VoiceMessage";
 import React from "react";
 import ChatBubble from ".";
@@ -9,7 +10,12 @@ export default {
 };
 
 export const FromOthers = () => (
-  <ChatBubble time="今天 下午4:20">这是其他人发送的消息</ChatBubble>
+  <ChatBubble time="今天 下午4:20">
+    这是其他人发送的消息
+    <Emoji label="ghost">
+      👻
+    </Emoji>
+  </ChatBubble>
 );
 
 export const Mine = () => (
