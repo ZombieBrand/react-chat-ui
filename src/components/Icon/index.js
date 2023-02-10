@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StyledIcon } from "./style";
+import SocialIcon from "./SocialIcon";
 
 function Icon(props) {
   const {
@@ -19,6 +20,8 @@ function Icon(props) {
     </StyledIcon>
   );
 }
+
+Icon.Social = SocialIcon;
 
 Icon.propTypes = {
   icon: PropTypes.elementType,

@@ -12,6 +12,7 @@ import {
   faEllipsisH,
   faCog,
 } from "@fortawesome/free-solid-svg-icons";
+import "styled-components/macro"
 
 function NavBar(props) {
   const { ...rest } = props;
