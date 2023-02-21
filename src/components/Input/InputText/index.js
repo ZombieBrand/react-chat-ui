@@ -1,20 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import StyledInputText, { InputUnderline } from "./style";
-// import LabelContainer from "components/LabelContainer";
+import LabelContainer from "components/LabelContainer";
 
 function InputText({ label, placeholder = "请输入内容", ...rest }) {
   const input = <InputUnderline type="text" placeholder={placeholder} />;
   return (
-    <StyledInputText>
-      {input}
+    <StyledInputText {...rest}>
+      {label ? <LabelContainer label={label}>{input}</LabelContainer> : input}
     </StyledInputText>
   );
-  // return (
-  //   <StyledInputText>
-  //     {label ? <LabelContainer label={label}>{input}</LabelContainer> : input}
-  //   </StyledInputText>
-  // );
 }
 
 InputText.propTypes = {
