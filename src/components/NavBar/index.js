@@ -44,7 +44,7 @@ function MenuItem(props) {
     <StyledMenuItem active={active} {...rest}>
       <a href="#">
         <Badge show={showBadge}>
-          <MenuIcon icon={icon} active={active}></MenuIcon>
+          <MenuIcon icon={icon} active={active.toString()}></MenuIcon>
         </Badge>
       </a>
     </StyledMenuItem>
