@@ -18,7 +18,7 @@ export const Menu = () => {
         width: 100px;
       `}
     >
-      <MenuItem showBadge active icon={faCommentDots}></MenuItem>
+      <MenuItem showBadge active={true} icon={faCommentDots}></MenuItem>
     </div>
   );
 };

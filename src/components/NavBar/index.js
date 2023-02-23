@@ -39,12 +39,12 @@ function NavBar(props) {
 
 function MenuItem(props) {
   const { icon, active, showBadge, ...rest } = props;
-  console.log({ props });
+  const activeString = active ? "true" : "false";
   return (
     <StyledMenuItem active={active} {...rest}>
       <a href="#">
         <Badge show={showBadge}>
-          <MenuIcon icon={icon} active={active.toString()}></MenuIcon>
+          <MenuIcon icon={icon} active={activeString}></MenuIcon>
         </Badge>
       </a>
     </StyledMenuItem>
