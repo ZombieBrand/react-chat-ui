@@ -14,7 +14,8 @@ import Seperator from "components/Seperator";
 import "styled-components/macro";
 import { useSpring, animated } from "react-spring";
 
-function Settings({ children, ...rest }) {
+function Settings(props) {
+  const { children, ...rest } = props;
   const animeProps = useSpring({
     transform: "translate3d(0px, 0px, 0px)",
     opacity: 1,

@@ -17,7 +17,8 @@ import Icon from "components/Icon";
 import Text from "components/Text";
 import blockedData from "data/blocked";
 
-function BlockedList({ children, ...rest }) {
+function BlockedList(props) {
+  const { children, ...rest } = props
   return (
     <StyledBlockedList {...rest}>
       <SettingsMenu>

@@ -14,7 +14,8 @@ import Emoji from "components/Emoji";
 import Popover from "components/Popover";
 import { useTheme } from "styled-components";
 
-function Footer({ animeProps, style, children, ...rest }) {
+function Footer(props) {
+  const { animeProps, style, children, ...rest } = props;
   const [emojiIconActive, setEmojiIconActive] = useState(false);
   const theme = useTheme();
   return (

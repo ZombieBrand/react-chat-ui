@@ -26,7 +26,8 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
-function EditProfile({ children, ...rest }) {
+function EditProfile(props) {
+  const { children, ...rest } = props
   const [showEdit, setShowEdit] = useState(false);
   if (!showEdit) {
     return (

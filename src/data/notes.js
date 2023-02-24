@@ -6,7 +6,7 @@ import note5 from "assets/images/note-5.jpg";
 import note6 from "assets/images/note-6.jpg";
 import note7 from "assets/images/note-7.jpg";
 
-export default [
+ const noteData =  [
   {
     id: 1,
     image: note1,
@@ -57,3 +57,4 @@ export default [
     publishedAt: "2020-08-22",
   },
 ];
+export default noteData

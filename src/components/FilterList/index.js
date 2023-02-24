@@ -10,13 +10,14 @@ import Icon from "components/Icon";
 
 import { ReactComponent as Plus } from "assets/icons/plus.svg";
 
-function FilterList({
-  children,
-  options,
-  filterLabel = "列表排序",
-  actionLabel,
-  ...rest
-}) {
+function FilterList(props) {
+  const {
+    children,
+    options,
+    filterLabel = "列表排序",
+    actionLabel,
+    ...rest
+  } = props;
   return (
     <StyledFilterList {...rest}>
       <Input.Search />
