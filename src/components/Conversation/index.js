@@ -9,12 +9,20 @@ import Footer from "components/Footer";
 import { useSpring } from "react-spring";
 
 function Conversation(props) {
-  const { children, ...rest } = props;
+  const { onAvatarClick, onVideoClicked, children, ...rest } = props;
+  const tBarAnimeProps = useSpring({
+    opacity: 1,
+    transform: "translate3d(0px, 0px, 0px)",
+    from: { opacity: 0, transform: "translate3d(0px, -50px, 0px)" },
+    delay: 500,
+  });
+
   const convsAnimeProps = useSpring({
     opacity: 1,
     transform: "translate3d(0px, 0px, 0px)",
     from: { opacity: 0, transform: "translate3d(50px, 0px, 0px)" },
-    delay: 600,  });
+    delay: 600,
+  });
 
   const ftAnimeProps = useSpring({
     opacity: 1,
@@ -25,7 +33,11 @@ function Conversation(props) {
 
   return (
     <StyledConversation {...rest}>
-      <TitleBar />
+      <TitleBar
+        onVideoClicked={onVideoClicked}
+        onAvatarClick={onAvatarClick}
+        animeProps={tBarAnimeProps}
+      />
       <Conversations style={convsAnimeProps}>
         <ChatBubble time="昨天 下午14：26">Hi 小宇，忙什么呢？</ChatBubble>
         <MyChatBubble time="昨天 下午16：30">

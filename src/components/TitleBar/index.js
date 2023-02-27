@@ -14,10 +14,17 @@ import { DropdownItem } from "components/Dropdown/style";
 import Seperator from "components/Seperator";
 
 function TitleBar(props) {
-  const { children, ...rest } = props;
+  const {
+    animeProps,
+    style,
+    onAvatarClick,
+    onVideoClicked,
+    children,
+    ...rest
+  } = props;
   return (
-    <StyledTitleBar {...rest}>
-      <Avatar status="offline" src={face}></Avatar>
+    <StyledTitleBar style={{ ...style, ...animeProps }} {...rest}>
+      <Avatar onClick={onAvatarClick} status="offline" src={face}></Avatar>
       <Title>
         <Paragraph size="large">帅气的小伙</Paragraph>
         <Paragraph type="secondary">
@@ -26,7 +33,7 @@ function TitleBar(props) {
         </Paragraph>
       </Title>
       <Actions>
-        <Icon opacity={0.3} icon={Call} />
+        <Icon opacity={0.3} icon={Call} onClick={onVideoClicked}/>
         <Icon opacity={0.3} icon={Camera} />
         <Dropdown
           content={

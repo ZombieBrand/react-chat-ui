@@ -1,8 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { MenuIcon, MenuItems, StyledMenuItem, StyledNavBar } from "./style";
+import { StyledNavBar, StyledMenuItem, MenuIcon, MenuItems } from "./style";
 import Badge from "components/Badge";
 import Avatar from "components/Avatar";
+
 import profileImage from "assets/images/face-male-1.jpg";
 import {
   faCommentDots,
@@ -12,10 +11,11 @@ import {
   faEllipsisH,
   faCog,
 } from "@fortawesome/free-solid-svg-icons";
-import "styled-components/macro"
 
-function NavBar(props) {
-  const { ...rest } = props;
+import "styled-components/macro";
+import { Link, useLocation, matchPath } from "react-router-dom";
+
+function NavBar({ ...rest }) {
   return (
     <StyledNavBar {...rest}>
       <Avatar src={profileImage} status="online" />
@@ -37,29 +37,28 @@ function NavBar(props) {
   );
 }
 
-function MenuItem(props) {
-  const { icon, active, showBadge, ...rest } = props;
-  const activeString = active ? "true" : "false";
+function MenuItem({ to = "#", icon, showBadge, ...rest }) {
+  const loc = useLocation();
+  const active = !!matchPath(
+    {
+      path: to,
+      end: true,
+    },
+    loc.pathname
+  );
   return (
     <StyledMenuItem active={active} {...rest}>
-      <a href="#">
+      <Link to={to}>
         <Badge show={showBadge}>
-          <MenuIcon icon={icon} active={activeString}></MenuIcon>
+          <MenuIcon active={active ? "true" : "false"} icon={icon} />
         </Badge>
-      </a>
+      </Link>
     </StyledMenuItem>
   );
 }
 
-NavBar.propTypes = {
-  children: PropTypes.any,
-};
+NavBar.propTypes = {};
 
-MenuItem.propTypes = {
-  icon: PropTypes.any,
-  active: PropTypes.bool,
-  showBadge: PropTypes.bool,
-};
 export default NavBar;
 
 export { MenuItem };

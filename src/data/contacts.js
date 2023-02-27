@@ -8,7 +8,7 @@ import face4 from "assets/images/face-female-2.jpg";
 import face6 from "assets/images/face-female-3.jpg";
 import face8 from "assets/images/face-female-4.jpg";
 
-export default [
+const contactsData =  [
   {
     id: 1,
     avatar: face1,
@@ -28,7 +28,7 @@ export default [
   {
     id: 3,
     avatar: face3,
-    name: "慕容天宇",
+    name: "ZombieBrand",
     intro: "千里之行，始于足下。",
     status: "offline",
     statusText: "离线",
@@ -74,3 +74,6 @@ export default [
     statusText: "离线",
   },
 ];
+
+
+export default contactsData

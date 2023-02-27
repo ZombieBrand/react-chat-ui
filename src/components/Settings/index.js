@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import{
+import {
   StyledSettings,
   StyledSettingsItem,
   SettingsItemControl,
@@ -13,6 +13,7 @@ import Icon from "components/Icon";
 import Seperator from "components/Seperator";
 import "styled-components/macro";
 import { useSpring, animated } from "react-spring";
+import { Link } from "react-router-dom";
 
 function Settings(props) {
   const { children, ...rest } = props;
@@ -42,7 +43,15 @@ function Settings(props) {
           <SettingsItem label="语音和视频通话提醒" />
           <SettingsItem label="显示通知详情" />
           <SettingsItem label="声音" />
-          <SettingsItem label="查看已静音的好友列表" type="menu" />
+          <Link
+            to={`/settings/blocked`}
+            css={`
+              text-decoration: none;
+              color: inherit;
+            `}
+          >
+            <SettingsItem label="查看已静音的好友列表" type="menu" />
+          </Link>
         </SettingsGroup>
       </animated.div>
     </StyledSettings>
